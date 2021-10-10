@@ -13,7 +13,7 @@ namespace AssemblyBrowserTests
         [Test]
         public void Test1()
         {
-            
+            _assemblyBrowser.GetNamespace(@"C:\Users\ASUS\RiderProjects\MPPproject3\TestLibrary\bin\Debug\TestLibrary.dll");
         }
     }
     
