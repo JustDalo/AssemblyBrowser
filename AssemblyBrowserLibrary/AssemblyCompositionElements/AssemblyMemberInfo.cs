@@ -1,8 +1,8 @@
 namespace AssemblyBrowserLibrary.AssemblyCompositionElements
 {
-    public class AssemblyMemberInfo
+    public abstract class AssemblyMemberInfo
     {
-        public AssemblyMemberType GetContainerType => AssemblyMemberType.Member;
+        public abstract AssemblyMemberType GetContainerType { get; set; }
 
         public string Name { get; set; }
 
@@ -11,5 +11,6 @@ namespace AssemblyBrowserLibrary.AssemblyCompositionElements
         public string Type { get; set; }
 
         public string DeclarationName { get; set; }
+        
     }
 }
