@@ -1,6 +1,6 @@
 namespace AssemblyBrowserLibrary.AssemblyCompositionElements
 {
-    public enum AssemblyMemberType
+    public enum AssemblyTypes
     {
         Namespace,
         Type,
