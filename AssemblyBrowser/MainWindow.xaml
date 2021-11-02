@@ -15,11 +15,11 @@
         </Menu>
         
         <TreeView ItemsSource="{Binding LibAssembly}" Margin="0,40,0,-2.6" HorizontalAlignment="Left" Width="1100">
-            <TreeView.Resources>
-                <HierarchicalDataTemplate DataType="{x:Type regularExpressions:Group}" ItemsSource="{Binding Path=Members}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=Members}">
                     <TextBlock Text="{Binding Path=DeclarationName}" FontSize="20"/>
                 </HierarchicalDataTemplate>
-            </TreeView.Resources>
+            </TreeView.ItemTemplate>
         </TreeView>
     </Grid>
 </Window>

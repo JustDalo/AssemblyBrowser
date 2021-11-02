@@ -1,11 +1,8 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using AssemblyBrowser.TreeElems;
-using AssemblyBrowserLibrary;
 using AssemblyBrowserLibrary.AssemblyCompositionElements;
 using Microsoft.Win32;
 
@@ -14,10 +11,7 @@ namespace AssemblyBrowser
     public class AssemblyBrowserViewModel : INotifyPropertyChanged
     {
         public AssemblyBrowserLibrary.AssemblyBrowser AssemblyBrowser { get; }
-
-        //public AssemblyContainerInfo[] Assembly;
         public List<AssemblyContainerInfo> LibAssembly { get; set; }
-        public List<TreeNamespace> TreeNamespaces;
 
         public AssemblyBrowserViewModel()
         {
