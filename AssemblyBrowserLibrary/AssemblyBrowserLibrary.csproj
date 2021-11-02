@@ -41,7 +41,10 @@
         <Compile Include="AssemblyBrowser.cs" />
         <Compile Include="AssemblyCompositionElements\AssemblyContainerInfo.cs" />
         <Compile Include="AssemblyCompositionElements\AssemblyMemberInfo.cs" />
-        <Compile Include="AssemblyCompositionElements\AssemblyMemberType.cs" />
+        <Compile Include="AssemblyCompositionElements\AssemblyTypes.cs" />
+        <Compile Include="AssemblyCompositionElements\MemberTypes\AssemblyMemberType.cs" />
+        <Compile Include="AssemblyCompositionElements\MemberTypes\AssemblyNamespaceType.cs" />
+        <Compile Include="AssemblyCompositionElements\MemberTypes\AssemblyTypeInfo.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
