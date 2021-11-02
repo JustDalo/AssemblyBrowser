@@ -50,6 +50,9 @@
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
         </ApplicationDefinition>
+        <Compile Include="TreeElems\TreeMember.cs" />
+        <Compile Include="TreeElems\TreeNamespace.cs" />
+        <Compile Include="TreeElems\TreeType.cs" />
         <Page Include="MainWindow.xaml">
             <Generator>MSBuild:Compile</Generator>
             <SubType>Designer</SubType>
@@ -81,6 +84,12 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\AssemblyBrowserLibrary\AssemblyBrowserLibrary.csproj">
+        <Project>{df268d80-9a5b-4d63-b1a4-6e80d5715b2d}</Project>
+        <Name>AssemblyBrowserLibrary</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

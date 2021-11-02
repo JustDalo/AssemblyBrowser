@@ -7,8 +7,13 @@ namespace AssemblyBrowser
     {
         //region Fields 
         readonly Action<object> _execute;
-        readonly Predicate<object> _canExecute;
+        readonly Func<object, bool> _canExecute;
 
+        public AssemblyBrowserCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        {
+            _execute = execute;
+            _canExecute = canExecute;
+        }
         public bool CanExecute(object parameter)
         {
             return _canExecute == null ? true : _canExecute(parameter);
