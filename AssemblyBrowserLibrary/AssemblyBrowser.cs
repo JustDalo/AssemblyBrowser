@@ -24,22 +24,22 @@ namespace AssemblyBrowserLibrary
                     continue;
                 }
 
-                AssemblyContainerInfo namespaceInfo;
+                AssemblyContainerInfo assemblyNamespaceInfo;
                 if (!namespaces.ContainsKey(typeNamespace))
                 {
-                    namespaceInfo = new AssemblyNamespaceType()
+                    assemblyNamespaceInfo = new AssemblyNamespaceType()
                     {
                         DeclarationName = type.Namespace,
                     };
-                    namespaces.Add(typeNamespace, namespaceInfo);
+                    namespaces.Add(typeNamespace, assemblyNamespaceInfo);
                 }
                 else
                 {
-                    namespaces.TryGetValue(typeNamespace, out namespaceInfo);
+                    namespaces.TryGetValue(typeNamespace, out assemblyNamespaceInfo);
                 }
 
-                var typeInfo = GetTypeInfo(type);
-                namespaceInfo?.AddMember(typeInfo);
+                var assemblyTypeInfo = GetTypeInfo(type);
+                assemblyNamespaceInfo?.AddMember(assemblyTypeInfo);
             }
             AssemblyContainerInfo[] result = namespaces.Values.ToArray();
             return result;
@@ -47,7 +47,7 @@ namespace AssemblyBrowserLibrary
 
         private AssemblyMemberInfo GetTypeInfo(Type type)
         {
-            AssemblyContainerInfo typeInfo = new AssemblyTypeInfo()
+            AssemblyContainerInfo assemblyTypeInfo = new AssemblyTypeInfo()
             {
                 DeclarationName = type.Name,
 
@@ -87,11 +87,11 @@ namespace AssemblyBrowserLibrary
                 }
                 if (assemblyMemberInfo.DeclarationName != null)
                 {
-                    typeInfo.AddMember(assemblyMemberInfo);
+                    assemblyTypeInfo.AddMember(assemblyMemberInfo);
                 }
             }
 
-            return typeInfo;
+            return assemblyTypeInfo;
             
         }
 
