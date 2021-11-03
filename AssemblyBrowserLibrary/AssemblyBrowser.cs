@@ -24,14 +24,22 @@ namespace AssemblyBrowserLibrary
                     continue;
                 }
 
-                AssemblyContainerInfo namespaceInfo = new AssemblyNamespaceType()
+                AssemblyContainerInfo namespaceInfo;
+                if (!namespaces.ContainsKey(typeNamespace))
                 {
-                    DeclarationName = type.Namespace,
-                };
-                namespaces.Add(type.ToString(), namespaceInfo);
+                    namespaceInfo = new AssemblyNamespaceType()
+                    {
+                        DeclarationName = type.Namespace,
+                    };
+                    namespaces.Add(typeNamespace, namespaceInfo);
+                }
+                else
+                {
+                    namespaces.TryGetValue(typeNamespace, out namespaceInfo);
+                }
+
                 var typeInfo = GetTypeInfo(type);
-                namespaceInfo.AddMember(typeInfo);
-                
+                namespaceInfo?.AddMember(typeInfo);
             }
             AssemblyContainerInfo[] result = namespaces.Values.ToArray();
             return result;
